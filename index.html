@@ -16,10 +16,123 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald:wght@300;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(120deg, #2980b9, #6dd5ed);
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .nav-center {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    #nav-mobile li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    #nav-mobile a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    #nav-mobile a:hover {
+      color: #ffd700;
+    }
+
+    .main-site-wrapper {
+      padding: 20px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 40px 0;
+      color: #2980b9;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 560px; /* Responsive max width */
+      height: 315px;
+    }
+
+    #about-info {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-content {
+      background-color: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact-content a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-content a:hover {
+      color: #ffd700;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #c-right {
+      position: absolute;
+      right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 2rem;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -28,28 +141,24 @@
     <section id="home">
       <div class="container">
         <div class="row heading">
-          <div class="col l6 m6 s6">
+          <div class="col s12">
             <h1 class="title animate-title">[Your Name]</h1>
-          </div>
-          <div class="col l6 m6 s6">
             <h2 class="sub-title animate-subtitle">Video Editor</h2>
           </div>
         </div>
       </div>
 
       <!-- Navigation Bar -->
-      <div id="nav-wrapper">
-        <nav class="nav-center z-depth-0">
-          <ul id="nav-mobile">
-            <li><a href="#home" class="anchor">Home</a></li>
-            <li><a href="#real-estate" class="anchor">Real Estate</a></li>
-            <li><a href="#face-edits" class="anchor">Face Edits</a></li>
-            <li><a href="#tech-edits" class="anchor">Tech Edits</a></li>
-            <li><a href="#about" class="anchor">About</a></li>
-            <li><a href="#contact" class="anchor">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="nav-center z-depth-0">
+        <ul id="nav-mobile">
+          <li><a href="#home" class="anchor">Home</a></li>
+          <li><a href="#real-estate" class="anchor">Real Estate</a></li>
+          <li><a href="#face-edits" class="anchor">Face Edits</a></li>
+          <li><a href="#tech-edits" class="anchor">Tech Edits</a></li>
+          <li><a href="#about" class="anchor">About</a></li>
+          <li><a href="#contact" class="anchor">Contact</a></li>
+        </ul>
+      </nav>
     </section>
   </header>
 
@@ -59,12 +168,8 @@
     <div class="container">
       <h3 class="section-heading animate-section">Real Estate Video Edits</h3>
       <div id="real-estate" class="section scrollspy">
-        <div class="row">
-          <div class="col l12 m12 s12">
-            <div class="video-container animate-video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/example1" title="Real Estate Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
+        <div class="video-container animate-video">
+          <iframe src="https://www.youtube.com/embed/example1" title="Real Estate Video" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -73,12 +178,8 @@
     <div class="container">
       <h3 class="section-heading animate-section">Face Video Edits</h3>
       <div id="face-edits" class="section scrollspy">
-        <div class="row">
-          <div class="col l12 m12 s12">
-            <div class="video-container animate-video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/example2" title="Face Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
+        <div class="video-container animate-video">
+          <iframe src="https://www.youtube.com/embed/example2" title="Face Video Edit" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -87,12 +188,8 @@
     <div class="container">
       <h3 class="section-heading animate-section">Tech Video Edits</h3>
       <div id="tech-edits" class="section scrollspy">
-        <div class="row">
-          <div class="col l12 m12 s12">
-            <div class="video-container animate-video">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/example3" title="Tech Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
+        <div class="video-container animate-video">
+          <iframe src="https://www.youtube.com/embed/example3" title="Tech Video Edit" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -102,7 +199,7 @@
       <h3 class="section-heading animate-section">About Me</h3>
       <div id="about" class="section scrollspy">
         <div class="row">
-          <div class="col l12 m12 s12">
+          <div class="col s12">
             <p id="about-info" class="animate-text">
               <img id="profile-pic" class="hide-on-med-and-down animate-image" src="assets/images/profile-pic.jpg" alt="[Your Name] Video Editor"/>
               <img id="profile-pic-mobile" class="hide-on-large-only animate-image" src="assets/images/profile-pic.jpg" alt="[Your Name] Video Editor"/>
