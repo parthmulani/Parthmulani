@@ -12,228 +12,191 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <style>
-    /* Custom Styles for Sleek Design */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0a0a0a;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    header {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-    }
-
-    header h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin: 0;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards 0.5s;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards 1s;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 10, 10, 0.9);
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ff6b6b;
-    }
-
-    section {
-      padding: 6rem 2rem;
-      background: #1a1a1a;
-      margin: 2rem 0;
-      border-radius: 10px;
-    }
-
-    section h3 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #0a0a0a;
-      color: #fff;
-    }
-
-    /* GSAP Animations */
-    .animate-section h3,
-    .animate-section p,
-    .animate-section .video-container {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Header with Animated Title -->
   <header>
-    <div>
-      <h1>[Your Name]</h1>
-      <h2>Video Editor</h2>
-    </div>
+    <section id="home">
+      <div class="container">
+        <div class="row heading">
+          <div class="col l6 m6 s6">
+            <h1 class="title animate-title">[Your Name]</h1>
+          </div>
+          <div class="col l6 m6 s6">
+            <h2 class="sub-title animate-subtitle">Video Editor</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div id="nav-wrapper">
+        <nav class="nav-center z-depth-0">
+          <ul id="nav-mobile">
+            <li><a href="#home" class="anchor">Home</a></li>
+            <li><a href="#real-estate" class="anchor">Real Estate</a></li>
+            <li><a href="#face-edits" class="anchor">Face Edits</a></li>
+            <li><a href="#tech-edits" class="anchor">Tech Edits</a></li>
+            <li><a href="#about" class="anchor">About</a></li>
+            <li><a href="#contact" class="anchor">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#real-estate">Real Estate</a></li>
-      <li><a href="#face-edits">Face Edits</a></li>
-      <li><a href="#tech-edits">Tech Edits</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
   <!-- Main Content -->
-  <main>
+  <div class="main-site-wrapper">
     <!-- Real Estate Section -->
-    <section id="real-estate" class="animate-section">
-      <h3>Real Estate Video Edits</h3>
-      <p>Showcasing stunning real estate properties through cinematic video edits.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/example1" title="Real Estate Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="container">
+      <h3 class="section-heading animate-section">Real Estate Video Edits</h3>
+      <div id="real-estate" class="section scrollspy">
+        <div class="row">
+          <div class="col l12 m12 s12">
+            <div class="video-container animate-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/example1" title="Real Estate Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- Face Edits Section -->
-    <section id="face-edits" class="animate-section">
-      <h3>Face Video Edits</h3>
-      <p>Highlighting emotions and expressions through creative face edits.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/example2" title="Face Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="container">
+      <h3 class="section-heading animate-section">Face Video Edits</h3>
+      <div id="face-edits" class="section scrollspy">
+        <div class="row">
+          <div class="col l12 m12 s12">
+            <div class="video-container animate-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/example2" title="Face Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- Tech Edits Section -->
-    <section id="tech-edits" class="animate-section">
-      <h3>Tech Video Edits</h3>
-      <p>Bringing technology to life with dynamic and engaging video edits.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/example3" title="Tech Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="container">
+      <h3 class="section-heading animate-section">Tech Video Edits</h3>
+      <div id="tech-edits" class="section scrollspy">
+        <div class="row">
+          <div class="col l12 m12 s12">
+            <div class="video-container animate-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/example3" title="Tech Video Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="animate-section">
-      <h3>About Me</h3>
-      <p>
-        I am a professional video editor with expertise in real estate, face, and tech video edits. With over 10 years of experience, I have worked on a variety of projects, from corporate videos to social media content. My passion for technology and creativity drives me to deliver high-quality video edits that captivate and engage audiences.
-      </p>
-    </section>
+    <div class="container">
+      <h3 class="section-heading animate-section">About Me</h3>
+      <div id="about" class="section scrollspy">
+        <div class="row">
+          <div class="col l12 m12 s12">
+            <p id="about-info" class="animate-text">
+              <img id="profile-pic" class="hide-on-med-and-down animate-image" src="assets/images/profile-pic.jpg" alt="[Your Name] Video Editor"/>
+              <img id="profile-pic-mobile" class="hide-on-large-only animate-image" src="assets/images/profile-pic.jpg" alt="[Your Name] Video Editor"/>
+              I am a professional video editor with expertise in real estate, face, and tech video edits. With over 10 years of experience, I have worked on a variety of projects, from corporate videos to social media content. My passion for technology and creativity drives me to deliver high-quality video edits that captivate and engage audiences.
+              <br><br>
+              I am proficient in Final Cut Pro and Adobe Premiere Pro, and I continuously strive to enhance my skills and stay updated with the latest trends in video editing. Whether it's a real estate walkthrough, a face-focused edit, or a tech review, I bring a unique perspective and attention to detail to every project.
+              <br><br>
+              In my free time, I enjoy exploring new editing techniques, working on personal tech projects, and collaborating with other creatives. I am always eager to take on new challenges and bring ideas to life through the power of video.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="animate-section">
-      <h3>Contact Me</h3>
-      <p>Let's collaborate! Reach out to me via email or social media.</p>
-      <div>
-        <a href="mailto:your-email@example.com" style="color: #ff6b6b;">Email</a> | 
-        <a href="https://www.linkedin.com/in/your-linkedin-profile/" style="color: #ff6b6b;">LinkedIn</a>
+    <div class="wave">
+      <div id="contact" class="section scrollspy">
+        <div class="container">
+          <h3 class="section-heading animate-section" id="contact-title">Contact Me</h3>
+          <div class="row contact-content">
+            <div id="contact-wrapper">
+              <div class="col l1 m1 s12"></div>
+              <div class="col l2 m2 s6 animate-contact">
+                <div class="row center-align">
+                  <i class="small material-icons">description</i>
+                </div>
+                <div class="row">
+                  <h5 class="center-align c-labels">
+                    <a href="https://docs.google.com/document/d/your-resume-link" target="_blank">RESUME</a>
+                  </h5>
+                </div>
+              </div>
+              <div class="col l2 m2 s6 animate-contact">
+                <div class="row center-align">
+                  <i class="small material-icons">group</i>
+                </div>
+                <div class="row">
+                  <h5 class="center-align c-labels">
+                    <a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank">LINKEDIN</a>
+                  </h5>
+                </div>
+              </div>
+              <div class="col l2 m2 s6 animate-contact">
+                <div class="row center-align">
+                  <img src="assets/images/github-white.png" style="width:28px">
+                </div>
+                <div class="row">
+                  <h5 class="center-align c-labels">
+                    <a href="https://github.com/your-github-profile" target="_blank">GITHUB</a>
+                  </h5>
+                </div>
+              </div>
+              <div class="col l2 m2 s6 animate-contact">
+                <div class="row center-align">
+                  <i class="small material-icons">email</i>
+                </div>
+                <div class="row">
+                  <h5 class="center-align c-labels">
+                    <a href="mailto:your-email@example.com" target="_blank">EMAIL</a>
+                  </h5>
+                </div>
+              </div>
+              <div class="col l2 m2 s6 animate-contact">
+                <div class="row center-align">
+                  <i class="small material-icons">phone_iphone</i>
+                </div>
+                <div class="row">
+                  <h5 class="center-align c-labels">
+                    <a href="tel:your-phone-number">PHONE</a>
+                  </h5>
+                </div>
+              </div>
+              <div class="col l1 m1 s12"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+  <footer class="page-footer">
+    <div id="c-right">Copyright &copy; 2023 [Your Name]</div>
   </footer>
 
   <!-- GSAP Animations -->
   <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animate sections on scroll
-    gsap.utils.toArray(".animate-section").forEach((section) => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-        },
-      });
-    });
+    gsap.from(".animate-title", { opacity: 0, y: -50, duration: 1.5, delay: 0.5 });
+    gsap.from(".animate-subtitle", { opacity: 0, y: 50, duration: 1.5, delay: 1 });
+    gsap.from(".animate-section", { opacity: 0, y: 50, duration: 1, scrollTrigger: ".animate-section" });
+    gsap.from(".animate-video", { opacity: 0, scale: 0.8, duration: 1, scrollTrigger: ".animate-video" });
+    gsap.from(".animate-text", { opacity: 0, x: -50, duration: 1, scrollTrigger: ".animate-text" });
+    gsap.from(".animate-image", { opacity: 0, x: 50, duration: 1, scrollTrigger: ".animate-image" });
+    gsap.from(".animate-contact", { opacity: 0, y: 50, stagger: 0.2, duration: 1, scrollTrigger: ".animate-contact" });
   </script>
 </body>
 </html>
