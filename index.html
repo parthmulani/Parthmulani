@@ -10,14 +10,17 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0; /* Light background */
+            background-image: linear-gradient(135deg, #6C63FF, #3F3D56); /* Gradient background */
+            color: #fff; /* Text color for better contrast on the gradient */
+            min-height: 100vh;
         }
-        
+
         header {
-            background: linear-gradient(135deg, #6C63FF, #3F3D56);
-            color: white;
-            padding: 80px 20px;
             text-align: center;
+            padding: 80px 20px;
             animation: fadeIn 1s ease-in-out;
+            background: rgba(108, 99, 255, 0.7); /* Slightly transparent background */
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
         }
 
         h1 {
@@ -49,7 +52,7 @@
         section {
             margin: 50px 20px;
             padding: 40px;
-            background: white;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             animation: slideIn 0.5s forwards;
@@ -62,34 +65,37 @@
             justify-content: space-between;
         }
 
+        .feature, .video {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 10px; /* Adding margin for spacing */
+            opacity: 0;
+        }
+
         .feature {
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            margin: 10px; /* Adding margin for spacing */
-            animation: slideIn 0.5s forwards;
-            opacity: 0;
+            width: calc(33.333% - 20px); /* Three features per row */
         }
 
         .video {
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 1 1 calc(33.333% - 20px); /* Three videos per row */
             margin: 10px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.5s forwards;
-            opacity: 0;
-        }
-
-        .video iframe {
-            width: 100%;
-            height: 100%;
         }
 
         .video-container {
             position: relative;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         @keyframes fadeIn {
@@ -105,10 +111,11 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.9);
             color: white;
             position: relative;
             height: 100px;
+            margin-top: 20px; /* Additional space above footer */
         }
 
         /* Media Query for smaller screens */
@@ -147,22 +154,22 @@
         </div>
     </section>
     
-    <section id="about">
+    <section id="about" style="animation-delay: 0.2s;">
         <h2>About Us</h2>
         <p>Learn more about our company and what we do.</p>
     </section>
 
-    <section id="services">
+    <section id="services" style="animation-delay: 0.4s;">
         <h2>Our Services</h2>
         <p>Explore the services we offer to our customers.</p>
     </section>
 
-    <section id="testimonials">
+    <section id="testimonials" style="animation-delay: 0.6s;">
         <h2>Testimonials</h2>
         <p>What our clients say about us.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="animation-delay: 0.8s;">
         <h2>Contact Us</h2>
         <p>If you have any questions, feel free to reach out!</p>
     </section>
@@ -171,27 +178,27 @@
         <h2>Video Gallery</h2>
         <div class="video">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/example1" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/example2" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/example3" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/example3" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/example4" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/example4" allowfullscreen></iframe>
             </div>
         </div>
         <div class="video">
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/example5" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/example5" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -208,10 +215,11 @@
             }, 300);
         }
         
-        // Animate features and video sections when they are in view
+        // Animate sections when they are in view
         window.addEventListener('load', () => {
             const features = document.querySelectorAll('.feature');
             const videos = document.querySelectorAll('.video');
+            const sections = document.querySelectorAll('section');
 
             features.forEach((feature, index) => {
                 feature.style.animationDelay = `${index * 0.2}s`;
@@ -221,6 +229,12 @@
             videos.forEach((video, index) => {
                 video.style.animationDelay = `${index * 0.2 + 0.5}s`;
                 video.style.opacity = 1;
+            });
+
+            sections.forEach((section) => {
+                section.style.opacity = 1;
+                section.style.animationDuration = '0.5s';
+                section.style.animationFillMode = 'forwards';
             });
         });
     </script>
