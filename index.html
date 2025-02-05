@@ -26,12 +26,13 @@
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
+      margin: 0;
     }
 
     header {
       background: linear-gradient(120deg, #2980b9, #6dd5ed);
       color: white;
-      padding: 50px 0;
+      padding: 50px 20px;
       text-align: center;
     }
 
@@ -43,7 +44,7 @@
 
     #nav-mobile li {
       display: inline-block;
-      margin: 0 15px;
+      margin: 0 10px;
     }
 
     #nav-mobile a {
@@ -58,7 +59,7 @@
     }
 
     .main-site-wrapper {
-      padding: 20px 0;
+      padding: 20px 10px;
     }
 
     .section-heading {
@@ -66,6 +67,7 @@
       font-size: 2.5rem;
       margin: 40px 0;
       color: #2980b9;
+      text-transform: uppercase;
     }
 
     .video-container {
@@ -113,7 +115,7 @@
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 10px 0;
+      padding: 10px 20px;
       position: relative;
       bottom: 0;
       width: 100%;
@@ -124,12 +126,59 @@
       right: 20px;
     }
 
-    @media (max-width: 768px) {
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .section-heading {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      header {
+        padding: 30px 20px;
+      }
+
       .section-heading {
         font-size: 2rem;
       }
+
+      #nav-mobile li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .video-container {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+      }
+      header h2 {
+        font-size: 1.8rem;
+      }
+      #about-info {
+        padding: 15px;
+      }
+      .section-heading {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header h2 {
+        font-size: 1.5rem;
+      }
+      .section-heading {
+        font-size: 1.6rem;
+      }
+      iframe {
+        height: 200px; /* Consider reducing height for mobile */
       }
     }
   </style>
